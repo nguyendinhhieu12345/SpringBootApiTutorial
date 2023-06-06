@@ -1,21 +1,28 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="tblProduct")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String productName;
-    private int year;
+    private int productYear;
     private double price;
     private String url;
 
-    public Product(Long id, String productName, int year, double price, String url) {
-        this.id = id;
+    public Product() {
+    }
+
+    public Product(String productName, int productYear, double price, String url) {
         this.productName = productName;
-        this.year = year;
+        this.productYear = productYear;
         this.price = price;
         this.url = url;
     }
-    public Product() {
-    }
+
     public Long getId() {
         return id;
     }
@@ -32,12 +39,12 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getYear() {
-        return year;
+    public int getProductYear() {
+        return productYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setProductYear(int productYear) {
+        this.productYear = productYear;
     }
 
     public double getPrice() {
@@ -55,13 +62,13 @@ public class Product {
     public void setUrl(String url) {
         this.url = url;
     }
-    //POJO - plain object java object
+
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", productName='" + productName + '\'' +
-                ", year=" + year +
+                ", productYear=" + productYear +
                 ", price=" + price +
                 ", url='" + url + '\'' +
                 '}';
