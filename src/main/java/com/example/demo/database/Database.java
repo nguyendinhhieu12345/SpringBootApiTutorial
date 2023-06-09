@@ -17,10 +17,10 @@ public class Database {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                Product productA = new Product("test1",2020,2000.0,"");
-                Product productB = new Product("test2",2020,2000.0,"");
-                logger.info("insert data: "+ productRepository.save(productA));
-                logger.info("insert data: "+ productRepository.save(productB));
+//                Product productA = new Product("test1",2020,2000.0,"");
+//                Product productB = new Product("test2",2020,2000.0,"");
+//                logger.info("insert data: "+ productRepository.save(productA));
+//                logger.info("insert data: "+ productRepository.save(productB));
             }
         };
     }
